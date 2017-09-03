@@ -1,0 +1,32 @@
+[mysqld]
+sql_mode=''
+datadir=/data/s1/
+basedir=/usr/sbin/
+lc-messages-dir=/user/share/mysql
+plugin_dir=/lib64/mysql/plugin/
+socket=/data/s1/mysql.sock
+port=3316
+#symbolic-links=0
+log-error=/data/s1/mysqld.log
+pid-file=//data/s1/mysqld.pid
+user=mysql
+
+# Settings needed for group replication
+server_id=1
+gtid_mode=ON
+enforce_gtid_consistency=ON
+master_info_repository=TABLE
+relay_log_info_repository=TABLE
+binlog_checksum=NONE
+log_slave_updates=ON
+log_bin=binlog
+binlog_format=ROW
+#super_read_only=1
+transaction_write_set_extraction=XXHASH64
+loose-group_replication_group_name="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+loose-group_replication_local_address="127.0.0.1:24901"
+loose-group_replication_group_seeds="127.0.0.1:24901,127.0.0.1:24902,127.0.0.1:24903"
+loose-group_replication_start_on_boot=off
+loose-group_replication_bootstrap_group= off
+loose-group_replication_single_primary_mode=FALSE
+loose-group_replication_enforce_update_everywhere_checks= TRUE

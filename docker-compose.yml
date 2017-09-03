@@ -1,0 +1,16 @@
+version: '2'
+services:
+  mgr1:
+    image: mgr1.0
+    container_name: mgr
+    hostname: mgr
+    privileged: true
+    restart: always
+    ports:
+      - "3306:3306"
+      - "88:80"
+    volumes:
+      - ./data/:/data
+      - ./html/:/var/www/html
+      - ./conf/haproxy.cfg:/etc/haproxy/haproxy.cfg
+      - ./conf/docker-entrypoint.sh:/entrypoint.sh
