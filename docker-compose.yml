@@ -1,13 +1,14 @@
 version: '2'
 services:
   mgr1:
-    image: mgr1.0
+    image: mgr
     container_name: mgr
     hostname: mgr
     privileged: true
     restart: always
     ports:
       - "3306:3306"
+      - "3322:22"
       - "88:80"
     volumes:
       - ./data/:/data

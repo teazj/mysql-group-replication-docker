@@ -11,5 +11,5 @@ COPY conf/docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 VOLUME /var/lib/mysql
-EXPOSE 3306 22
+EXPOSE 3306 22 80
 CMD ["/usr/sbin/sshd","-D"]
