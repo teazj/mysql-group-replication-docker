@@ -1,3 +1,6 @@
+## mysql mgr docker环境
+
+
 ## 初始化数据库
 	chown -R mysql:mysql /data/s1
 	[ -d /data/s1 ] && /usr/sbin/mysqld --initialize-insecure --user=mysql --basedir=/usr/sbin --datadir=/data/s1
@@ -101,3 +104,7 @@
 	start transaction;
 	update test set name="123" where id=1;
 	commit;
+
+
+## 技术交流
+	QQ：58847393
