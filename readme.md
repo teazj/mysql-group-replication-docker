@@ -15,11 +15,7 @@
 	START GROUP_REPLICATION;
 	SET GLOBAL group_replication_bootstrap_group=OFF;
 	SELECT * FROM performance_schema.replication_group_members;
-	create database boom;
-	use boom;
-	create table boomballa(id int not null,name varchar(32),primary key(id));
-	insert into boomballa(id,name) values(1,'boomballa.top');
-	insert into boomballa(id,name) values(2,'myblog');
+
 
 
 ## 从库设置
@@ -87,6 +83,9 @@
 
 ## 添加数据
 	ab -c 5 -n 9999 http://localhost/update.php
+
+## 查看数据
+	ab -c 5 -n 9999 http://localhost/index.php
 
 ## 查看数据操作日志
 	tail -f data/s3/mgr.log  | grep -v "COMMIT" | grep -v "BEGIN"
