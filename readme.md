@@ -31,6 +31,9 @@
 	START GROUP_REPLICATION;
 	SELECT * FROM performance_schema.replication_group_members;
 
+## 添加节点
+	set global group_replication_group_seeds="172.22.0.6:3301,172.22.0.7:3302,172.22.0.8:3303"
+	show variables like '%group_replication_group_seeds%';
 
 
 ## HA测试
